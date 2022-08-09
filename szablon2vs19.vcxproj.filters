@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Bullet.cpp" />
+    <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="Item.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Bar.cpp" />
+    <ClCompile Include="Bonuses.cpp" />
+    <ClCompile Include="Level.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Draw.cpp" />
+    <ClCompile Include="Actions.cpp" />
+    <ClCompile Include="Time.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Bullet.h" />
+    <ClInclude Include="Enemy.h" />
+    <ClInclude Include="Item.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="Bar.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="Constants.h" />
+    <ClInclude Include="Level.h" />
+    <ClInclude Include="Bonuses.h" />
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="Draw.h" />
+    <ClInclude Include="Actions.h" />
+    <ClInclude Include="Time.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="eti.bmp">
+      <Filter>images</Filter>
+    </Image>
+    <Image Include="cs8x8.bmp">
+      <Filter>images</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="images">
+      <UniqueIdentifier>{7ca8da33-6d6f-4b14-9448-b4526eb9d6bf}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="szablon2vs19.rc" />
+  </ItemGroup>
+</Project>
