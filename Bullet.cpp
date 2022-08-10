@@ -1,6 +1,5 @@
-//#pragma once
-#include "Enemy.h"
-#include "Constants.h"
+#include "Bullet.h"
+
 
 extern double worldTime;
 
@@ -92,6 +91,51 @@ void Bullet::setPostionOfBullet(int x, int y)
 //		//~Bullet(); //setPostionOfBullet(pos.x, 50);
 //	}
 //}
+
+
+void Bullet::checkCollision(Player* player, int& numberOfgettingShooted, int& points)
+{
+	//	int i = 0;
+		//while (i<10) //ten enemies
+		//{ 
+	if (!player->getPlayerJustgotHit())
+	{
+		if (pos.x + 5 >= player->Item::getPos()->x &&
+			pos.x + 5 <= player->Item::getPos()->x + player->Item::getPos()->w &&
+			pos.y + 5 >= player->Item::getPos()->y &&
+			pos.y + 5 <= player->Item::getPos()->y + player->Item::getPos()->h)
+		{
+			this->isLive = false;
+			setPos(1000, 1000);
+			player->Item::blood -= 0.2f;
+			numberOfgettingShooted++;
+			points -= hitDepletedPoints;
+			player->setPlayerJustgotHit(true);
+			//break;
+		}
+	}
+
+	//	i++;
+//	}
+}
+
+void Bullet::checkCollision(int flag)
+{
+
+	//if (pos.x + 5 >= enemies->getPos()->x &&
+	//	pos.x + 5 <= enemies->getPos()->x + enemies->getPos()->w &&
+	//	pos.y + 5 >= enemies->getPos()->y &&
+	//	pos.y + 5 <= enemies->getPos()->y + enemies->getPos()->h)
+	//{
+	//	this->isLive = false;
+	//	setPos(1000, 1000);
+	//	enemies->blood -= 0.2f;
+	//	//break;
+	//}
+//	i++;
+//	}
+}
+
 void Bullet::move(Player* player, int &numberOfgettingShooted, int &points)
 {
 	if (pos.y < SCREEN_HEIGHT && pos.x < SCREEN_WIDTH) {
@@ -127,46 +171,4 @@ void Bullet::move(int flag)
 	}
 }
 
-void Bullet::checkCollision(Player* player, int &numberOfgettingShooted, int& points)
-{
-//	int i = 0;
-	//while (i<10) //ten enemies
-	//{ 
-	if (!player->getPlayerJustgotHit())
-	{
-		if (pos.x + 5 >= player->getPos()->x &&
-			pos.x + 5 <= player->getPos()->x + player->getPos()->w &&
-			pos.y + 5 >= player->getPos()->y &&
-			pos.y + 5 <= player->getPos()->y + player->getPos()->h)
-		{
-			this->isLive = false;
-			setPos(1000, 1000);
-			player->blood -= 0.2f;
-			numberOfgettingShooted++;
-			points -= hitDepletedPoints;
-			player->setPlayerJustgotHit(true);
-			//break;
-		}
-	}
-		
-	//	i++;
-//	}
-}
-
-void Bullet::checkCollision(int flag)
-{	
-
-		//if (pos.x + 5 >= enemies->getPos()->x &&
-		//	pos.x + 5 <= enemies->getPos()->x + enemies->getPos()->w &&
-		//	pos.y + 5 >= enemies->getPos()->y &&
-		//	pos.y + 5 <= enemies->getPos()->y + enemies->getPos()->h)
-		//{
-		//	this->isLive = false;
-		//	setPos(1000, 1000);
-		//	enemies->blood -= 0.2f;
-		//	//break;
-		//}
-	//	i++;
-//	}
-}
 

@@ -1,8 +1,7 @@
 #pragma once
 #include "Item.h"
 #include "Bullet.h"
-
-
+#include "Constants.h"
 class Bullet;
 
 class Player :public Item

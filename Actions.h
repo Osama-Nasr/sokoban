@@ -1,5 +1,6 @@
 #pragma once
-#include "Game.h"
+#include "Player.h"
+#include "Enemy.h"
 
 extern "C" {
 #include"./SDL2-2.0.10/include/SDL.h"

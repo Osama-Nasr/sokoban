@@ -1,13 +1,17 @@
 #pragma once
 #include<stdio.h>
-#include "Item.h"
+#include "Player.h"
 #include "Bullet.h"
 #include "Bar.h"
+#include "Constants.h"
 
 extern "C" {
 #include"./SDL2-2.0.10/include/SDL.h"
 #include"./SDL2-2.0.10/include/SDL_main.h"
 }
+
+class Bullet;
+class Player;
 
 class Enemy : public Item
 {

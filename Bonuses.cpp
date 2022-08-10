@@ -1,6 +1,4 @@
 #include "Bonuses.h"
-#include <stdlib.h>
-#include <time.h>
 
 
 Bonuses::Bonuses(SDL_Renderer* renderer)

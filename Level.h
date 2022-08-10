@@ -3,7 +3,8 @@
 #include "Bonuses.h"
 #include "Enemy.h"
 #include "Bar.h"
-#include "Game.h"
+#include <time.h>
+#include <stdlib.h>
 
 class Level {
 public:

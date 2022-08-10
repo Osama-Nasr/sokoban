@@ -1,11 +1,9 @@
 #pragma once
 #pragma warning
 #include "Draw.h"
-#include "Player.h"
 #include "Actions.h"
 #include "Time.h"
 #include "Level.h"
-#include "Constants.h"
 
 using namespace std;
 extern "C" {
@@ -13,9 +11,10 @@ extern "C" {
 #include"./SDL2-2.0.10/include/SDL_main.h"
 }
 
+
 class Game{
 private:
-	int quit = 1;
+	int quit = 0;
 	bool options = 0;
 	bool mMenu = 1;
 	int activeOption = 0;

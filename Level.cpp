@@ -1,10 +1,5 @@
 #include "Level.h"
-#include "Player.h"
-#include "Bar.h"
-#include "Enemy.h"
-#include "Bonuses.h"
-#include <time.h>
-#include <stdlib.h>
+
 
 Level::Level()
 {

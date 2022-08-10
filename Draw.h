@@ -1,7 +1,6 @@
 #pragma once
 #include<stdio.h>
 #include<string.h>
-#include "Game.h"
 #include"Player.h"
 
 extern "C" {
@@ -22,8 +21,7 @@ public:
 	void TextGame(SDL_Surface* screen, double worldTime, double fps, int numberOfHits, int numberOfgettingShooted, int points);
 	void TextContinueMenu(SDL_Surface* screen, SDL_Surface* eti, int points);
 
-	void DrawString(SDL_Surface* screen, int x, int y, const char* text,
-		SDL_Surface* charset);
+	void DrawString(SDL_Surface* screen, int x, int y, const char* text);
 	void DrawSurface(SDL_Surface* screen, SDL_Surface* sprite, int x, int y);
 	void DrawPixel(SDL_Surface* surface, int x, int y, Uint32 color);
 	void DrawLine(SDL_Surface* screen, int x, int y, int l, int dx, int dy, Uint32 color);

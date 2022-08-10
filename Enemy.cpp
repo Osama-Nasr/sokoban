@@ -1,5 +1,4 @@
 #include "Enemy.h"
-#include "Constants.h"
 
 Enemy::Enemy(SDL_Renderer* renderer)
 {
@@ -39,7 +38,7 @@ void Enemy::shoot2(int numberOfenemies)
 	{
 		if (bullet[i]->isLive == false)
 		{
-			bullet[i]->setPos(pos.x, pos.y);
+			bullet[i]->Item::setPos(pos.x, pos.y);
 			directionBullet += 1;
 			if (directionBullet > 4)
 				directionBullet = -4;
@@ -57,7 +56,7 @@ void Enemy::shoot1(int numberOfenemies)
 	{
 		if (bullet[i]->isLive == false)
 		{
-			bullet[i]->setPos(pos.x, pos.y);
+			bullet[i]->Item::setPos(pos.x, pos.y);
 
 			bullet[i]->isLive = true;
 			break;
@@ -92,13 +91,13 @@ void Enemy::checkIfEnemyALife()
 
 void Enemy::checkCollisionWithPlayerBullet(Bullet* playerBullet,int &numberOfHits, int &points)
 {
-	if (pos.x + 50 >= playerBullet->getPos()->x &&
-		pos.x + 15 <= playerBullet->getPos()->x + playerBullet->getPos()->w &&
-		pos.y + 15 >= playerBullet->getPos()->y &&
-		pos.y + 15 <= playerBullet->getPos()->y + playerBullet->getPos()->h && getLife() == true)
+	if (pos.x + 50 >= playerBullet->Item::getPos()->x &&
+		pos.x + 15 <= playerBullet->Item::getPos()->x + playerBullet->Item::getPos()->w &&
+		pos.y + 15 >= playerBullet->Item::getPos()->y &&
+		pos.y + 15 <= playerBullet->Item::getPos()->y + playerBullet->Item::getPos()->h && getLife() == true)
 	{
 		playerBullet->isLive = false;
-		playerBullet->setPos(1000, 1000);
+		playerBullet->Item::setPos(1000, 1000);
 		blood -= 1.0f;
 		numberOfHits++;
 		points += rewardPoints;

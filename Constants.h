@@ -1,4 +1,5 @@
 // Constants.h
+#pragma once
 #if !defined(MYLIB_CONSTANTS_H)
 #define SCREEN_WIDTH 640
 #define SCREEN_HEIGHT 480

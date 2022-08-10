@@ -1,14 +1,12 @@
 #pragma once
 #include "Player.h"
-#include "Item.h"
-
+#include "Enemy.h"
 
 
 extern "C" {
 #include"./SDL2-2.0.10/include/SDL.h"
 #include"./SDL2-2.0.10/include/SDL_main.h"
 }
-
 
 class Enemy;
 class Player;

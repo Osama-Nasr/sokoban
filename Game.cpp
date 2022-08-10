@@ -2,6 +2,8 @@
 
 Game::Game()
 {
+	 eti = SDL_LoadBMP("./eti.bmp");
+
 	 rc = SDL_CreateWindowAndRenderer(SCREEN_WIDTH, SCREEN_HEIGHT, 0,
 		&window, &renderer);
 
@@ -50,7 +52,11 @@ Game::Game()
 
 Game::~Game()
 {
-	delete enemies;
+	// delete enemies;
+	for (int i = 0; i < numberOfenemies; i++)
+	{
+		delete enemies[i];
+	}
 	delete bonuses;
 
 	ItemQuit();

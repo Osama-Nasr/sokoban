@@ -9,11 +9,11 @@ void Draw::TextStartingMenu(SDL_Surface* screen, SDL_Surface* eti)
 	DrawRectangle(screen, 4, 4, SCREEN_WIDTH - 8, SCREEN_HEIGHT - 8, red, blue);
 	DrawSurface(screen, eti, SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 - 150);
 	sprintf(text, "Welcome to Bullet Hell game");
-	DrawString(screen, screen->w / 2 - strlen(text) * 8 / 2, screen->h / 2 - 30, text, charset);
+	DrawString(screen, screen->w / 2 - strlen(text) * 8 / 2, screen->h / 2 - 30, text);
 	sprintf(text, "Press O for options");
-	DrawString(screen, screen->w / 2 - strlen(text) * 8 / 2, screen->h / 2, text, charset);
+	DrawString(screen, screen->w / 2 - strlen(text) * 8 / 2, screen->h / 2, text);
 	sprintf(text, "Press S to start the game");
-	DrawString(screen, screen->w / 2 - strlen(text) * 8 / 2, screen->h / 2 + 30, text, charset);
+	DrawString(screen, screen->w / 2 - strlen(text) * 8 / 2, screen->h / 2 + 30, text);
 }
 
 void Draw::TextOptions(SDL_Surface* screen, SDL_Surface* eti, double& enemyShootEverySEC, int activeOption, Player player, int level)
@@ -27,13 +27,13 @@ void Draw::TextOptions(SDL_Surface* screen, SDL_Surface* eti, double& enemyShoot
 	DrawSurface(screen, eti, SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 - 180);
 	DrawRectangle(screen, 150, screen->h / 2 - 30 + (activeOption * 30), 10, 10, red, red);
 	sprintf(text, "Info catalog (press O to go back)");
-	DrawString(screen, screen->w / 2 - strlen(text) * 8 / 2, screen->h / 2 - 60, text, charset);
+	DrawString(screen, screen->w / 2 - strlen(text) * 8 / 2, screen->h / 2 - 60, text);
 	sprintf(text, "1. Speed of the player (0...10): %d", player.getSpeedY_down());
-	DrawString(screen, screen->w / 2 - strlen(text) * 8 / 2, screen->h / 2 - 30, text, charset);
+	DrawString(screen, screen->w / 2 - strlen(text) * 8 / 2, screen->h / 2 - 30, text);
 	sprintf(text, "2. shooting from enemy every sec: %3.2f", enemyShootEverySEC);
-	DrawString(screen, screen->w / 2 - strlen(text) * 8 / 2, screen->h / 2, text, charset);
+	DrawString(screen, screen->w / 2 - strlen(text) * 8 / 2, screen->h / 2, text);
 	sprintf(text, "3. level: %d", level + 1);
-	DrawString(screen, screen->w / 2 - strlen(text) * 8 / 2, screen->h / 2 + 30, text, charset);
+	DrawString(screen, screen->w / 2 - strlen(text) * 8 / 2, screen->h / 2 + 30, text);
 }
 
 void Draw::TextGame(SDL_Surface* screen, double worldTime, double fps, int numberOfHits, int numberOfgettingShooted, int points)
@@ -46,10 +46,10 @@ void Draw::TextGame(SDL_Surface* screen, double worldTime, double fps, int numbe
 	DrawRectangle(screen, 4, 4, SCREEN_WIDTH - 8, 36, red, blue);
 	//            "template for the second project, elapsed time = %.1lf s  %.0lf frames / s"
 	sprintf(text, "Esc - exit, elapsed time = %.1lf s  %.0lf frames / s", worldTime, fps);
-	DrawString(screen, screen->w / 2 - strlen(text) * 8 / 2, 10, text, charset);
+	DrawString(screen, screen->w / 2 - strlen(text) * 8 / 2, 10, text);
 	//	      "Esc - exit, \030 - faster, \031 - slower"
 	sprintf(text, "space for shooting, hits: %d, got hit: %d, Total points: %d", numberOfHits, numberOfgettingShooted, points);
-	DrawString(screen, screen->w / 2 - strlen(text) * 8 / 2, 26, text, charset);
+	DrawString(screen, screen->w / 2 - strlen(text) * 8 / 2, 26, text);
 }
 
 void Draw::TextContinueMenu(SDL_Surface* screen, SDL_Surface* eti, int points)
@@ -62,14 +62,14 @@ void Draw::TextContinueMenu(SDL_Surface* screen, SDL_Surface* eti, int points)
 	DrawRectangle(screen, 4, 4, SCREEN_WIDTH - 8, SCREEN_HEIGHT - 8, red, blue);
 	DrawSurface(screen, eti, SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 - 150);
 	sprintf(text, "Continue? Press c if so, or press ESC to exit, or press n for menu");
-	DrawString(screen, screen->w / 2 - strlen(text) * 8 / 2, screen->h / 2 - 30, text, charset);
+	DrawString(screen, screen->w / 2 - strlen(text) * 8 / 2, screen->h / 2 - 30, text);
 	sprintf(text, "Your score is %d", points);
-	DrawString(screen, screen->w / 2 - strlen(text) * 8 / 2, screen->h / 2, text, charset);
+	DrawString(screen, screen->w / 2 - strlen(text) * 8 / 2, screen->h / 2, text);
 	sprintf(text, "want to go to level 1 press 1 & level 2 press 2 and so on");
-	DrawString(screen, screen->w / 2 - strlen(text) * 8 / 2, screen->h / 2 + 30, text, charset);
+	DrawString(screen, screen->w / 2 - strlen(text) * 8 / 2, screen->h / 2 + 30, text);
 }
 
-void Draw::DrawString(SDL_Surface* screen, int x, int y, const char* text, SDL_Surface* charset)
+void Draw::DrawString(SDL_Surface* screen, int x, int y, const char* text)
 {
 	int px, py, c;
 	SDL_Rect s, d;
@@ -140,5 +140,5 @@ Draw::Draw() {
 
 Draw::~Draw()
 {
-	SDL_FreeSurface(charset);
+	//SDL_FreeSurface(charset);
 }

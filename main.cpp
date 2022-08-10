@@ -1,13 +1,5 @@
 #define _USE_MATH_DEFINES
-#include<math.h>
-#include<stdio.h>
-#include<string.h>
-#include"Item.h"
-#include"Player.h"
-#include "Enemy.h"
-#include "Bar.h"
-#include "Bonuses.h"
-#include "Level.h"
+
 #include "Game.h"
 #include <stdlib.h>
 #include <time.h>

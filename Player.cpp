@@ -1,5 +1,4 @@
 #include "Player.h"
-#include "Constants.h"
 
 Player::Player(SDL_Renderer* renderer)
 {
